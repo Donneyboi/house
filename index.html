@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="java/jquery-3.6.0.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<title>hire</title>
+</head>
+<body>
+	<main>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$('.load').load('checklogin.php');
+			})
+		</script>
+		<div class="load"></div>
+
+		<div class="forregister">
+
+			<div class="buttondivr">
+			<button type="button" class="showtform">Siginup as Teacher</button>
+			<button type="button" class="showsform">Siginup as Student</button>
+			</div>
+					<button type="button" class="mylb showlogin">Already have an Account</button>
+
+	<!---------------------------------------the first form is for the teacher that is tform the short form of teacher-------------->
+	                                                   <div class="Siginuptform">
+	                                                   		<span class="showx"></span>
+	                                   <script type="text/javascript">
+				$(document).ready(function () {
+				$('.teacherform').on('submit',function (para) {
+					para.preventDefault();
+					$.ajax({
+				url:"processteacher.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  $('.showx').html("wait");
+                 },
+                 success:function(para2){
+                 	$('.showx').html(para2);
+                 },
+                 error:function(){
+                 	alert('error typing to processData');
+                 }
+
+					})
+				});
+				})
+			</script>
+	                                                   	<form class="teacherform" action="processteacher.php" method="post">
+	                                                   	
+                                                           <div class="tnames tf">
+
+                                                           	<h3 class="h3">What Your Name?</h3>
+
+                                                           	<div class="divinput">
+                                                           	<input type="text" name="tfirstname" placeholder="firstname">
+                                                           	<input type="text" name="tlastname" placeholder="lastname">	
+                                                           	</div>
+                                                               <button type="button" class="bt showemail">Next</button>
+                                                           </div>
+<button type="button" class="mylb showlogin">Already have an Account</button>
+
+                                                               <div class="tnames te">
+
+                                                           	<h3 class="h3">Email</h3>
+
+                                                           	<input type="text" name="temail" placeholder="email">
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt swtf">back</button>
+                                                               <button type="button" class="bt showcountry">Next</button>
+                                                               </div>
+                                                           </div>
+
+                                                                   <div class="tnames tc">
+
+                                                           	<h3 class="h3">your country</h3>
+
+                                                              <select name="tcountry">
+                                                              	<option>country</option>
+                                                              	<option>usa</option>
+                                                              	<option>nigeria</option>
+                                                              </select>
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt ste">back</button>
+                                                               <button type="button" class="bt showdeveloper">Next</button>
+                                                               </div>
+                                                           </div>
+
+
+                                                               <div class="tnames td">
+
+                                                           	<h3 class="h3">Are you a developer or teacher</h3>
+
+                                                              <select name="work">
+                                                              	<option>work</option>
+                                                              	<option>developer</option>
+                                                              	<option>teacher</option>
+                                                              </select>
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt shotc">back</button>
+                                                               <button type="button" class="bt showq">Next</button>
+                                                               </div>
+                                                           </div>
+
+                                                               <div class="tnames tq">
+
+                                                           	<h3 class="h3">what kind of teacher are you?
+                                                           		<br>what kind of developer are you?</h3>
+                                                                                        
+                                                           	<input type="text" name="taspert" placeholder="html css english law">
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt swd">back</button>
+                                                               <button type="button" class="bt showbio">Next</button>
+                                                               </div>
+                                                           </div>
+                                                                 <div class="tnames tb">
+
+                                                           	<h3 class="h3">write about your self</h3>
+                                                                                        
+                                                                    <textarea name="bio">bio not more  than 20 worlds</textarea>
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt shobio">back</button>
+                                                               <button type="button" class="bt showpassword">Next</button>
+                                                               </div>
+                                                           </div>
+
+                                                                   <div class="tnames tp">
+
+                                                           	<h3 class="h3">password</h3>
+                                                                  	<div class="divinput">
+                                                           	<input type="password" name="tpassword" placeholder="password">
+                                                           	<input type="password" name="tconfirmpassword" placeholder="confirmpassword">	
+                                                           	</div>                      
+                                                                 
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt shopp">back</button>
+                                                               <button type="button" class="bt showff">Next</button>
+                                                               </div>
+                                                           </div>
+                                                                
+
+                                                                     <div class="tnames tff">
+
+                                                           	<h3 class="h3">finish sigininup</h3>
+                                                                                        
+                                                          <input type="submit" name="reg" style="background: blue;	width: 60%;
+	height: 35px;
+	outline: none;
+	background-color: blue;
+	color: white;
+	font-family: inter;
+	border: none;
+	border-radius: 5px;">
+                                                           	<button type="button" class="bt shpp">back</button>
+                                                       
+                                                           </div>
+
+	                                                   		
+	                                                   	</form>
+	                                                   </div>
+
+<!---------------------------------------the first form is for the student-------------->
+	                                                   <div class="Siginupsform">
+                                                       <span class="showx"></span>
+
+	                                                <script type="text/javascript">
+				$(document).ready(function () {
+				$('.studentfrom').on('submit',function (para) {
+					para.preventDefault();
+					$.ajax({
+				url:"studentprocess.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  $('.showx').html("wait");
+                 },
+                 success:function(para2){
+                 	$('.showx').html(para2);
+                 },
+                 error:function(){
+                 	alert('error typing to processData');
+                 }
+
+					})
+				});
+				})
+			</script>
+	                                                   	<form class="studentfrom" action="studentprocess.php" method="post">
+	                                                   		
+                                                           <div class="tnames sname">
+
+                                                           	<h3 class="h3">What Your Name?</h3>
+
+                                                           	<div class="divinput">
+                                                           	<input type="text" name="sfirstname" placeholder="firstname">
+                                                           	<input type="text" name="slastname" placeholder="lastname">	
+                                                           	</div>
+                                                               <button type="button" class="bt nextemail">Next</button>
+                                                           </div>
+
+<button type="button" class="mylb showlogin">Already have an Account</button>
+
+                                                               <div class="tnames semail">
+
+                                                           	<h3 class="h3">Email</h3>
+
+                                                           	<input type="text" name="semail" placeholder="email">
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt backname">back</button>
+                                                               <button type="button" class="bt nextcountry">Next</button>
+                                                               </div>
+                                                           </div>
+
+                                                                  <div class="tnames scountry">
+
+                                                           	<h3 class="h3">your country</h3>
+
+                                                              <select name="scountry">
+                                                              	<option>country</option>
+                                                              	<option>usa</option>
+                                                              	<option>nigeria</option>
+                                                              </select>
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt backemail">back</button>
+                                                               <button type="button" class="bt nextgender">Next</button>
+                                                               </div>
+                                                           </div>
+
+                                                               <div class="tnames sg">
+
+                                                           	<h3 class="h3">Gender</h3>
+
+                                                              <select name="sgender">
+                                                              	<option>gender</option>
+                                                              	<option>Male</option>
+                                                              	<option>Female</option>
+                                                              </select>
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt backcountry">back</button>
+                                                               <button type="button" class="bt nextpass">Next</button>
+                                                               </div>
+                                                           </div>
+
+
+
+                                                                   <div class="tnames sp">
+
+                                                           	<h3 class="h3">password</h3>
+                                                                  	<div class="divinput">
+                                                           	<input type="password" name="spassword" placeholder="password">
+                                                           	<input type="password" name="sconfirmpassword" placeholder="confirmpassword">	
+                                                           	</div>                      
+                                                                 
+                                                           	
+                                                          
+                                                           	<div class="twob">
+                                                           		<button type="button" class="bt backgender">back</button>
+                                                               <button type="button" class="bt nextfinish">Next</button>
+                                                               </div>
+                                                           </div>
+                                                                
+
+                                                                     <div class="tnames sf">
+
+                                                           	<h3 class="h3">finish sigininup</h3>
+                                                                                        
+                                                          <input type="submit" name="log" style="background: blue;	width: 60%;
+	height: 35px;
+	outline: none;
+	background-color: blue;
+	color: white;
+	font-family: inter;
+	border: none;
+	border-radius: 5px;">
+                                                           	<button type="button" class="bt backpassword">back</button>
+                                                       
+                                                           </div>
+
+
+
+
+
+
+
+
+	                                                   	</form>
+	                                                   </div>
+
+<!--------------------------------------------------------------------the login form ------------------------------->
+	                                                   <div class="sigin">
+                <script type="text/javascript">
+                $(document).ready(function () {
+                $('.loginform').on('submit',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"processlogin.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  $('.erroloing').html("wait");
+                 },
+                 success:function(para2){
+                    $('.erroloing').html(para2);
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+                                                        <form class="loginform" action="processlogin.php" method="post">
+                                                        <div class="siginimag">
+                                                            <div class="smaimaage"></div>
+                                                        </div>
+                                                        <span class="erroloing"></span>
+                                                        <div class="myinpu">
+                                                            <input type="text" name="email" placeholder="email">
+                                                            <input type="password" name="password" placeholder="password">
+                                                            <input type="hidden" name="typeform" value="student">
+                                                            <input type="submit" name="" value="submit" style=" outline: none;
+    background-color: blue;
+    color: white;
+    font-family: inter;
+    border: none;
+    border-radius: 5px;">
+                                                        </div>
+
+                                                           </form>
+                                                       </div>
+
+
+		</div>
+
+		<!---------------------------------------------homepage------------------------------------------------->
+		<div class="homepage">
+		<div class="teacher">
+			<section class="tsec1">
+
+				<div class="thome">
+						
+					<div class="shead">
+						<h1>OnlineTeach</h1>
+                          <div class="addpost" style=" margin-left: 140px;">
+                    <label class="fa fa-camera showpost"></label>
+                </div>
+					</div>
+					<div class="sbody">
+
+					<div class="mypost">
+                             <div class="showallpost">
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                             $('.showallpost').load('showallpost.php');
+                            })
+                        </script>
+                              </div>
+                       </div>
+             
+
+		              </div>
+                
+				
+				</div>
+				<!-------------------------------------------------------chat------------------------------------------------------------------->
+				<div class="tchat">
+					 <div class="schathead">
+			   	<h1>Chat</h1>
+			   </div>
+			    <div class="schatbody">
+
+			    	<div class="smallchatdiv">
+			    		<div class="chatimage"></div>
+			    		<div class="chatname">
+			    			<h3>dominic stephen</h3>
+			    			<span>awfar</span>
+			    		</div>
+			    		<div class="chatbox">
+			    			<span>1</span>
+			    			<p>12:40pm</p>
+			    		</div>
+			    	</div>
+
+
+
+			    </div>
+
+				</div>
+				<!------------------------------------------------------------------------notification---------------->
+				<div class="tnotification">
+					
+			<div class="snotificationhead">
+				<h1>Notification</h1>
+			</div>
+			<div class="snotificationbody">
+					<div class="smallchatdiv">
+			    		<div class="snotificationimage"></div>
+			    		<div class="snotificationname">
+			    			<h3>dominic stephen</h3>
+			    			<span>comment on his photo</span>
+			    		</div>
+			    		
+			    	</div>
+			</div>
+
+				</div>
+
+			<!------------------------------------------------------------------------usert---------------->
+			   <div class="tuser">
+			   			<div class="suserhead"></div>
+					<div class="suserbody">
+						
+							<div class="con1">
+								<div class="loadpic"></div>
+						<script type="text/javascript">
+				
+                function k() {
+                    
+                
+                $(document).ready(function () {
+
+					$.ajax({
+				url:"profileteacher.php",
+                 type:"get",
+                 data:"nav=link",
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  //$('.showx').html("wait");
+                 },
+                 success:function(para2){
+                 document.getElementById('pic').src="profile/"+para2;
+                 },
+                 error:function(){
+                 	alert('error typing to processData');
+                 }
+
+					})
+				});
+				}
+                k();
+			</script>
+	                 
+								<div class="userimage">
+									<img id="pic">
+	<label for="imgss"><i class="fa fa-camera" style="position: relative; left: 50px; bottom: 14px;"></i></label>
+								
+								</div>
+                                                                   <script type="text/javascript">
+                $(document).ready(function () {
+                $('.chanpic').on('change',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"procesprofilteach.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                  //$('.showx').html("wait");
+                 },
+                 success:function(para2){
+                    $('.vv').html(para2);
+                    k();
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+            <div class="vv"></div>
+								<form class="chanpic" action="procesprofilteach.php" method="post" enctype="multipart/form-data">
+									<input type="file" name="tpic" style="display: none;" id="imgss">
+								</form>
+								<h3>dominic stphen</h3>
+							</div>
+
+							<div class="con2">
+
+								<label class="fa fa-address-book"><span>Profile Information</span></label>
+								<label class="fa fa-key"><span>Change Password</span></label>
+								<label class="fa fa-question-circle"><span>Help Center</span></label>
+								<label class="fa fa-info-circle"><span>Profile Information</span></label>
+							</div>
+							<div class="ldiv">
+							<button><a href="logout.php">LOGOUT</a></button>
+							</div>
+						
+					</div>
+
+
+
+
+					
+			   </div>
+			</section>
+
+			<section class="tsec2">
+				<label class="fa fa-home th"><span>home</span></label>
+				<label class="fa fa-comment ttc"><span>chat</span></label>
+				<label class="fa fa-bell tn"><span>notification</span></label>
+				<label class="fa fa-user tu"><span>user</span></label>
+			</section>
+
+		</div>
+		<!------------------------------------------------student---------------------------------------------------------->
+		<div class="student">
+			<section class="student1">
+				<!-------------------------------------------------------studenthome-------------------------------------------------->
+				<div class="shome">
+					<div class="shead">
+						<h1>OnlineTeach</h1>
+					</div>
+					<div class="sbody">
+
+					<div class="mypost">
+
+
+                              <div class="showallpost">
+                        <script type="text/javascript">
+                            $(document).ready(function () {
+                             $('.showallpost').load('showallpost.php');
+                            })
+                        </script>
+                              </div>
+                       
+					</div>
+
+
+				
+					</div>
+				</div>
+		<!-------------------------------------------------------studenthire------------------------------------------------->
+		         <div class="hire">
+		         	<div class="hirehead">
+		         		<h1>Available</h1>
+		         	</div>
+		         	<div class="hirebody">
+                        <div class="loadavteacher">
+                            <script type="text/javascript">
+                                $(document).ready(function () {
+                                    $('.loadavteacher').load('fetchavailabelteacher.php')
+                                })
+
+                            </script>
+                            
+                        </div>
+
+		         	</div>
+		         </div>
+		<!-------------------------------------------------------studentchat------------------------------------------------->
+				<div class="schat">
+			   <div class="schathead">
+			   	<h1>Chat</h1>
+			   </div>
+			    <div class="schatbody">
+
+			    	<div class="smallchatdiv">
+			    		<div class="chatimage"></div>
+			    		<div class="chatname">
+			    			<h3>dominic stephen</h3>
+			    			<span>awfar</span>
+			    		</div>
+			    		<div class="chatbox">
+			    			<span>1</span>
+			    			<p>12:40pm</p>
+			    		</div>
+			    	</div>
+
+
+
+			    </div>
+				</div>
+
+					<!-------------------------------------------------------studentnotification------------------------------------------------->
+				<div class="snotification">
+
+			<div class="snotificationhead">
+				<h1>Notification</h1>
+			</div>
+			<div class="snotificationbody">
+					<div class="smallchatdiv">
+			    		<div class="snotificationimage"></div>
+			    		<div class="snotificationname">
+			    			<h3>dominic stephen</h3>
+			    			<span>comment on his photo</span>
+			    		</div>
+			    		
+			    	</div>
+			</div>
+
+
+
+				</div>
+				<!-------------------------------------------------------studentUSER------------------------------------------------->
+
+				
+				<div class="suser">
+					<div class="suserhead"></div>
+					<div class="suserbody">
+						
+							<div class="con1">
+								<div class="userimage"></div>
+								<h3>dominic stphen</h3>
+							</div>
+
+							<div class="con2">
+
+								<label class="fa fa-address-book"><span>Profile Information</span></label>
+								<label class="fa fa-key"><span>Change Password</span></label>
+								<label class="fa fa-question-circle"><span>Help Center</span></label>
+								<label class="fa fa-info-circle"><span>Profile Information</span></label>
+							</div>
+							<div class="ldiv">
+								<button><a href="logout.php">LOGOUT</a></button>
+							</div>
+						
+					</div>
+				</div>
+
+			</section>
+			<section class="student2">
+				<label class="fa fa-home sh"><span>home</span></label>
+				<label class="fa fa-book shh"><span>book</span></label>
+				<label class="fa fa-comment sc"><span>chat</span></label>
+				<label class="fa fa-bell sn"><span>notification</span></label>
+				<label class="fa fa-user su"><span>user</span></label>
+			</section>
+
+		</div>
+		<!-end->
+		</div>
+		<!------------------------------------------------------detail---------------------------------------------------------->
+
+	<div class="loadd">
+     <script type="text/javascript">
+         $(document).ready(function () {
+             $('.loadd').load('detailfetch.php');
+         })
+     </script>   
+    </div>
+			
+		
+		
+
+
+	
+
+		<!--------------------------------------------------------post------------------------------------------------------------------->
+        <div class="post2">
+
+            <span class="posterr"></span>
+        <script type="text/javascript">
+                $(document).ready(function () {
+                $('.hpost').on('submit',function (para) {
+                    para.preventDefault();
+                    $.ajax({
+                url:"processpost.php",
+                 type:"post",
+                 data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                 $('.posterr').html("wait");
+                 },
+                 success:function(para2){
+                    $('.posterr').html(para2);
+                    
+
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                    })
+                });
+                })
+            </script>
+            <form action="processpost.php" method="post" enctype="multipart/form-data" class="hpost">
+                <div class="posthead2">
+                    <label class="fa fa-times hidepost"></label>
+                    <h3>make a post</h3>
+                    <button type="submit" class="hidepost">post</button>
+                </div>
+                <div class="postbody2">
+                    <textarea name="postmessage">whats happinig</textarea>
+<!--
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $('.shimage').on('change',function(wow){
+                               // wow.preventDefault();
+                                alert(0);
+                                $.ajax({
+                                    url:"ckeckloadpic.php",
+                                    type:"POST",
+                                     data:new FormData(this),
+                 contentType:false,
+                 cache:false,
+                 processData:false,
+                 beforeSend:function(){
+                    alert(1);
+                  //$('.showx').html("wait");
+                 },
+                 success:function(para3){
+                    $('.loadf').html(para3);
+                    
+                 },
+                 error:function(){
+                    alert('error typing to processData');
+                 }
+
+                                });
+                            });
+
+                        });
+                    </script>
+-->
+
+<!--                    <form class="shimage" method="post" action="ckeckloadpic.php" enctype="multipart/form-data">-->
+                             <div class="shimage">
+                        <label class="fa fa-camera" for="mimg"></label>
+                         <div class="loadf">
+                             
+                         </div>
+                             
+
+                        <input type="file" name="myfile[]" accept="" multiple id="mimg" style="display:none;">
+                    <!--</form>-->
+                </div>
+            </div>
+            </form>
+        </div>
+		                              
+	</main>
+<script type="text/javascript" src="java/java.js"></script>
+</body>
+</html>
